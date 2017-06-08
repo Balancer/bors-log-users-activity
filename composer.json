@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=7.1"
+        "balancer/bors-core": "*"
     },
     "autoload": {
         "psr-4": {
