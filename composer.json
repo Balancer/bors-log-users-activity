@@ -16,6 +16,10 @@
         "balancer/bors-core": "*"
     },
 
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+
     "autoload": {
         "psr-4": {
             "B2\\Log\\Users\\": "src/"
@@ -37,7 +41,10 @@
         "configure-commit-template": "git config --add commit.template .gitmessage"
     },
 
-    "require-dev": {
-        "phpunit/phpunit": "*"
-    }
+	"extra": {
+		"bors-data-hooks": {
+			"on-action": "B2\\Theme\\AdminLte::user_action_register",
+			"on-view":   "B2\\Theme\\AdminLte::user_view_register"
+		}
+	}
 }
