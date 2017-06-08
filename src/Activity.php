@@ -2,16 +2,10 @@
 
 namespace B2\Log\Users;
 
-class Activity
+class Activity extends \B2\Obj\Mysql
 {
-
-    /**
-     * Initialize.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-
-    }
+	static function user_view_register($view)
+	{
+//		echo $view;
+	}
 }

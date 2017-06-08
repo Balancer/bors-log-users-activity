@@ -43,8 +43,8 @@
 
 	"extra": {
 		"bors-hooks": {
-			"on-action": ["B2\\Theme\\AdminLte::user_action_register"],
-			"on-view":   ["B2\\Theme\\AdminLte::user_view_register"]
+			"on-action": ["B2\\Log\\Users\\Activity::user_action_register"],
+			"on-view":   ["B2\\Log\\Users\\Activity::user_view_register"]
 		}
 	}
 }
