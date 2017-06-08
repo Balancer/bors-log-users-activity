@@ -1,36 +1,43 @@
 {
     "name": "balancer/bors-log-users-activity",
+
     "description": "PHP project.",
     "keywords": [],
     "license": "MIT",
+
     "authors": [
         {
             "name": "Balancer",
             "email": "balancer@balancer.ru"
         }
     ],
+
     "require": {
         "balancer/bors-core": "*"
     },
+
     "autoload": {
         "psr-4": {
             "B2\\Log\\Users\\": "src/"
         }
     },
+
     "autoload-dev": {
         "psr-4": {
             "B2\\Log\\Users\\Tests\\": "tests/"
         }
     },
-    "minimum-stability": "stable",
+
     "config": {
         "sort-packages": true
     },
+
     "scripts": {
         "test": "phpunit",
         "configure-commit-template": "git config --add commit.template .gitmessage"
     },
+
     "require-dev": {
-        "phpunit/phpunit": "^6.2"
+        "phpunit/phpunit": "*"
     }
 }
