@@ -13,7 +13,7 @@ class Init extends AbstractMigration
 			->addColumn('user_id', 'integer', ['signed' => false, 'length'=>10])
 
 			->addColumn('view_class_name', 'string')
-			->addColumn('view_id', 'integer', ['signed' => false, 'length'=>10])
+			->addColumn('view_id', 'integer', ['signed' => false, 'length'=>10, 'null' => true])
 
 			->addColumn('action', 'string', ['null' => true])
 			->addColumn('action_data', 'text', ['null' => true])
