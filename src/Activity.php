@@ -4,6 +4,7 @@ namespace B2\Log\Users;
 
 class Activity extends \B2\Obj\Mysql
 {
+	function db_name() { return \B2\Cfg::get('b2.changeable.db'); }
 	function table_name() { return 'bors_log_users_activity'; }
 	function table_fields()
 	{
@@ -22,6 +23,9 @@ class Activity extends \B2\Obj\Mysql
 
 	static function user_view_register($view)
 	{
+		if(!$view)
+			return;
+
 		if(!\B2\App::main_app()->me()->id())
 			return;
 
