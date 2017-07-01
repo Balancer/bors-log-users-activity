@@ -36,12 +36,14 @@ class Activity extends \B2\Obj\Mysql
 		if(!$view)
 			return;
 
-		if(!\B2\App::main_app()->me()->id())
+		$me = \B2\App::main_app()->me();
+
+		if(!$me || !$me->id() || $me->is_null())
 			return;
 
 		self::create([
-			'user_class_name' => \B2\App::main_app()->me()->class_name(),
-			'user_id' => \B2\App::main_app()->me()->id(),
+			'user_class_name' => $me->class_name(),
+			'user_id' => $me->id(),
 			'view_class_name' => $view->class_name(),
 			'view_id' => $view->id(),
 			'view_title' => $view->title(),
@@ -51,12 +53,14 @@ class Activity extends \B2\Obj\Mysql
 
 	static function user_action_register($object, $data)
 	{
-		if(!\B2\App::main_app()->me()->id())
+		$me = \B2\App::main_app()->me();
+
+		if(!$me || !$me->id() || $me->is_null())
 			return;
 
 		self::create([
-			'user_class_name' => \B2\App::main_app()->me()->class_name(),
-			'user_id' => \B2\App::main_app()->me()->id(),
+			'user_class_name' => $me->class_name(),
+			'user_id' => $me->id(),
 			'view_class_name' => $object->class_name(),
 			'view_id' => $object->id(),
 			'action' => @$data['act'],
