@@ -33,7 +33,7 @@ class Activity extends \B2\Obj\Mysql
 
 	static function user_view_register($view)
 	{
-		if(!$view)
+		if(!is_object($view))
 			return;
 
 		$me = \B2\App::main_app()->me();
