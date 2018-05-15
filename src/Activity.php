@@ -36,7 +36,7 @@ class Activity extends \B2\Obj\Mysql
 		if(!is_object($view))
 			return;
 
-		$me = \B2\App::main_app()->me();
+		$me = \B2\App::main_app()->get('me');
 
 		if(!$me || !$me->id() || $me->is_null())
 			return;
